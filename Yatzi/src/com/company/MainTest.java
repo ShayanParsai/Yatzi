@@ -14,6 +14,7 @@ public class MainTest {
         for(Dice die: dice) {
             die.value = 6;
         }
+
     }
 
     @Test
@@ -25,4 +26,12 @@ public class MainTest {
         }
         dice[5].value = 1;
     }
+
 }
+
+
+
+// To do : easy/hard/impossible förtydliga , 3 olika metoder i pregame
+// To do : GamemodeChoice scope
+// To do : inte gå för mkt höger ( nest ) fågel
+// Aserrtions
