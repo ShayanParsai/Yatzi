@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class GameFunction extends Main {
 
+    private static byte testIfWin = 0;
+
     public static void Win(String gameModeChoise) {
         switch (gameModeChoise) {
             case "i" -> { System.out.println("You got YATZI ON IMPOSSIBLE MODE!");
@@ -27,19 +29,20 @@ public class GameFunction extends Main {
             gameLoop = false;
         }
     }
-    public static void CheckIfWin() {
-        for(int i=1; i< savedRolls.length; i++) {
-            if (savedRolls[i].value != savedRolls[i-1].value) {
+    public static byte CheckIfWin(Dice[] listOfDices) {
+        for(int i=1; i< listOfDices.length; i++) {
+            if (listOfDices[i].value != listOfDices[i-1].value) {
+                testIfWin = 0;
                 isYatzi = false;
                 break;
-            }
-        }
+            } else {testIfWin = 1;}
+        } return testIfWin;
     }
     public static void RollDice() {
         System.out.println("Starting turn " + (turnCounter+1) + " of 3, rolling dice.");
-        for(int i = 0; i< savedRolls.length; i++) {
-            savedRolls[i].GetRandomNumbers();
-            System.out.println(i+1 + ": " + savedRolls[i].getResult());
+        for(int i = 0; i< listOfDices.length; i++) {
+            listOfDices[i].getRandomNumbers();
+            System.out.println(i+1 + ": " + listOfDices[i].getResult());
         }
     }
 }

@@ -31,9 +31,9 @@ public class PreGame extends Main {
         System.out.println("Good luck, the probability of winning is...not likely.. give up buddy :/ \n");
     }
     private static void HowManyDice(int x){
-        savedRolls = new Dice[x];
+        listOfDices = new Dice[x];
         for(int i=0; i<x; i++) {
-            savedRolls[i] = new Dice();
+            listOfDices[i] = new Dice();
         }
         System.out.println("\nTo win, roll the same number on " + x + " dice");
         preGameLoop = false;

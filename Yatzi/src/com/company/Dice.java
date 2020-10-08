@@ -3,7 +3,7 @@ package com.company;
 public class Dice {
     public int value;
 
-    public void GetRandomNumbers() {
+    public void getRandomNumbers() {
         value = (int)(Math.random()*6+1);
     }
 

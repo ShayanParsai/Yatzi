@@ -5,25 +5,25 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testing Main")
-public class MainTest extends Main {
+public class MainTest {
 
     @Test
     @DisplayName("Testing if Yatzi works")
-    void isYatziWhenAllDiceIsSame() {
-        Dice[] diceArray = new Dice[5];
-        for(Dice die: diceArray) {
+    void CheckIfWin() {
+        //Check if Win works
+        Dice[] listOfDices = {new Dice(),new Dice(), new Dice(), new Dice(), new Dice()};
+        for(Dice dice: listOfDices) {
+            dice.value = 6;
+        }
+        //Check if loss works
+        Dice[] listofDices2 = {new Dice(),new Dice(), new Dice(), new Dice(), new Dice()};
+        for(Dice die: listofDices2) {
             die.value = 6;
         }
-        //assertEquals(testIfWin, "true", Main.checkIfWin(diceArray));
-    }
+        listofDices2[3].value = 1;
 
-    /*@Test
-    @DisplayName("Testing that its not allways Yatzi")
-    void isNotYatziWhenOneDieIsNotMatchingTheOther() {
-        Dice[] dice = new Dice[5];
-        for(Dice die: dice) {
-            die.value = 6;
-        }
-        dice[5].value = 1;
-    } */
+        assertEquals(1,GameFunction.CheckIfWin(listOfDices)); // Check if win works
+        assertEquals(0,GameFunction.CheckIfWin(listofDices2)); // Check if loss works
+    }
 }
+
