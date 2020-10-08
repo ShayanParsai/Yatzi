@@ -3,4 +3,4 @@
 Shayan / Jesper
 
 
-To do : Assertions / Scopes
+Possible improvements : Scopes
