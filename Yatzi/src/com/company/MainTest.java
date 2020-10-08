@@ -2,22 +2,22 @@ package com.company;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-
+import static org.junit.jupiter.api.Assertions.*;
 
 @DisplayName("Testing Main")
-public class MainTest {
+public class MainTest extends Main {
 
     @Test
     @DisplayName("Testing if Yatzi works")
     void isYatziWhenAllDiceIsSame() {
-        Dice[] dice = new Dice[5];
-        for(Dice die: dice) {
+        Dice[] diceArray = new Dice[5];
+        for(Dice die: diceArray) {
             die.value = 6;
         }
-
+        //assertEquals(testIfWin, "true", Main.checkIfWin(diceArray));
     }
 
-    @Test
+    /*@Test
     @DisplayName("Testing that its not allways Yatzi")
     void isNotYatziWhenOneDieIsNotMatchingTheOther() {
         Dice[] dice = new Dice[5];
@@ -25,13 +25,5 @@ public class MainTest {
             die.value = 6;
         }
         dice[5].value = 1;
-    }
-
+    } */
 }
-
-
-
-// To do : easy/hard/impossible förtydliga , 3 olika metoder i pregame
-// To do : GamemodeChoice scope
-// To do : inte gå för mkt höger ( nest ) fågel
-// Aserrtions

@@ -3,15 +3,11 @@ package com.company;
 public class Dice {
     public int value;
 
-    public Dice() {
-        value = (int) Math.random();
-    }
-
-    public void DiceRoll() {
+    public void GetRandomNumbers() {
         value = (int)(Math.random()*6+1);
     }
 
-    public String getString() {
+    public String getResult() {
         return "Dice shows " + value;
     }
 }
