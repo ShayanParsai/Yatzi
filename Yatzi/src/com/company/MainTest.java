@@ -9,8 +9,8 @@ public class MainTest {
 
     @Test
     @DisplayName("Testing if Yatzi works")
-    void CheckIfWin() {
-        //Check if Win works
+    void checkIfWin() {
+        //Check if win works
         Dice[] listOfDices = {new Dice(),new Dice(), new Dice(), new Dice(), new Dice()};
         for(Dice dice: listOfDices) {
             dice.value = 6;
@@ -22,8 +22,8 @@ public class MainTest {
         }
         listofDices2[3].value = 1;
 
-        assertEquals(1,GameFunction.CheckIfWin(listOfDices)); // Check if win works
-        assertEquals(0,GameFunction.CheckIfWin(listofDices2)); // Check if loss works
+        assertTrue(GameFunction.checkIfWin(listOfDices)); // Check if win works
+        assertFalse(GameFunction.checkIfWin(listofDices2)); // Check if loss works
     }
 }
 
